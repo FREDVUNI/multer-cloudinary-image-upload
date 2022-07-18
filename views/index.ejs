@@ -1,0 +1,19 @@
+    <%- include('./includes/head') %>
+        <h1 class="title">The kanzucode bootcamp cohort one blog</h1>
+        <div class="row">
+            <% if(posts.length > 0){ %>
+            <% posts.forEach(post=>{  %>
+                <div class="col-6">
+                    <h4 class="t"><a href="<%=post._id%>"><%=post.title%></a></h4>
+                    <p class="p-tag"><%=post.description  %>.</p>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-github"></i>
+                        <i class="fab fa-facebook"></i>
+                        <img src="/uploads/<%=post.coverImage  %>" class="image-tag"/>
+                </div>
+            <% }) %>
+            <% }else{ %>
+                <h1 class="title-">There are no posts available.</h1>
+            <% } %>
+        </div>  
+    <%- include('./includes/footer') %>

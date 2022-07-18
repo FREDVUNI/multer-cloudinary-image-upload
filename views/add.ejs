@@ -1,0 +1,30 @@
+<%- include('./includes/head') %>
+<h1 class="title">Add your blog post here ...</h1>
+<div class="row post-row">
+   <% if(locals.errorMsg){ %>
+         <div class="alert-danger"><%= errorMsg  %></div>
+   <% } %>
+   <div class="col-6">
+      <form method="POST" enctype="multipart/form-data" action="/create">
+         <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Enter blog title" value="" required>
+         </div>
+         <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" placeholder="Enter description ..." cols="40" rows="10"  name="description" required></textarea>
+         </div>
+         <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" name="coverImage" accept="image/*" id="image" class="form-control" required/>
+         </div>
+         <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">create post</button>
+         </div>
+      </form>
+   </div>
+   <div class="col-6">
+      <img src="./images/log.svg" class="image-tags"/>
+   </div>
+</div>
+<%- include('./includes/footer') %>
