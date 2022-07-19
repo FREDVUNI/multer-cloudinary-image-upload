@@ -15,7 +15,7 @@ cloudinary.config({
 const mimeTypes = ['images/png','images/jpg','images/gif']
 
 const storage = multer.diskStorage({
-    destination:(req,file,cb)=>{ 
+    destination:(req,file,cb)=>{  
         cb(null,"public/uploads")
     },
     fileFilter:(req,file,cb)=>{
@@ -43,7 +43,7 @@ router.post("/create",upload.single("coverImage"),async(req,res)=>{
             coverImage:fileName,
             imageUrl:result.url
         })
-        await post.save()
+        await post.save() 
         res.redirect("/")
     }
     catch(error){

@@ -44,6 +44,11 @@ body {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
+.preview img{
+    width:200px;
+    margin:10px 0px 15px 0px;
+    height:auto;
+}
 .title-{
     color: #ddd;
     font-size: 2rem;
