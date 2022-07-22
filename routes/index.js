@@ -36,7 +36,6 @@ router.post("/create",upload.single("coverImage"),async(req,res)=>{
     try{
         const fileName = req.file != null ? req.file.filename:null
         const result = await cloudinary.v2.uploader.upload(req.file.path)
-
         const post = await new blog({
             title:req.body.title,
             description:req.body.description,
