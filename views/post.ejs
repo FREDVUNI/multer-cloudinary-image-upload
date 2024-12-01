@@ -1,19 +1,19 @@
 <%- include('./includes/head') %>
 <div class="row post-row">
-   <div class="col-6">
-      <h4 class="single"><%=post.title%></h4>
-      <p><%=post.description %></p>
-      <div>
-         <a href="#" class="btn">
-            <i class="fa fa-pencil"></i>
-         </a>
-         <a href="#" class="btn">
-            <i class="fa fa-trash"></i>
-         </a>
-      </div>
-   </div>
-   <div class="col-6">
-      <img src="/uploads/<%= post.coverImage %>" class="image-tags"/>
-   </div>
+  <div class="col-6">
+    <h4 class="single"><%=post.title%></h4>
+    <p><%=post.description %></p>
+    <div>
+      <a href="#" class="btn">
+        <i class="fa fa-pencil"></i>
+      </a>
+      <a href="#" class="btn">
+        <i class="fa fa-trash"></i>
+      </a>
+    </div>
+  </div>
+  <div class="col-6">
+    <img src="/uploads/<%= post.coverImage %>" class="image-tags" />
+  </div>
 </div>
 <%- include('./includes/footer') %>
