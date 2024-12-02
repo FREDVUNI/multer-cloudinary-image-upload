@@ -11,9 +11,9 @@ const {
 } = require("../controllers");
 
 cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_SECRET,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 const mimeTypes = ["images/png", "images/jpg", "images/gif"];
@@ -40,7 +40,7 @@ router.post("/create", upload.single("coverImage"), async (req, res) => {
   try {
     const fileName = req.file != null ? req.file.filename : null;
     const result = await cloudinary.v2.uploader.upload(req.file.path);
-    const post = await new blog({
+    const post = new blog({
       title: req.body.title,
       description: req.body.description,
       coverImage: fileName,
