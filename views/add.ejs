@@ -1,9 +1,11 @@
 <%- include('./includes/head') %>
-<h1 class="title">Add your blog post here ...</h1>
+<h1 class="title">Share your blog post</h1>
+
 <div class="row post-row">
-  <% if(locals.errorMsg){ %>
-  <div class="alert-danger"><%= errorMsg %></div>
+  <% if (locals.errorMsg) { %>
+  <div class="alert alert-danger"><strong>Error:</strong> <%= errorMsg %></div>
   <% } %>
+
   <div class="col-6">
     <form method="POST" enctype="multipart/form-data" action="/create">
       <div class="form-group">
@@ -13,45 +15,55 @@
           name="title"
           id="title"
           class="form-control"
-          placeholder="Enter blog title"
+          placeholder="Enter the blog title here"
           value=""
           required
         />
       </div>
+
       <div class="form-group">
         <label for="description">Description</label>
         <textarea
           class="form-control"
           id="description"
-          placeholder="Enter description ..."
+          placeholder="Write a brief description of your blog post"
           cols="40"
-          rows="10"
+          rows="6"
           name="description"
           required
         ></textarea>
       </div>
+
       <div class="form-group">
-        <label for="image">Image</label>
-        <input
-          type="file"
-          name="coverImage"
-          preview="image-preview"
-          accept="image/*"
-          id="image"
-          class="form-control"
-          required
-        />
+        <label for="image">Cover Image</label>
+        <div class="custom-file">
+          <input
+            type="file"
+            name="coverImage"
+            id="image"
+            accept="image/png, image/jpg, image/jpeg, image/gif"
+            class="custom-file-input"
+            required
+          />
+        </div>
+        <small class="form-text text-muted">
+          Accepted formats: PNG, JPG, JPEG, GIF
+        </small>
         <div class="preview" id="image-preview"></div>
       </div>
+
       <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block">
-          create post
+          Publish Blog Post
         </button>
       </div>
     </form>
   </div>
-  <div class="col-6">
-    <img src="./images/log.svg" class="image-tags" />
+
+  <div class="col-6 text-center">
+    <img src="./images/log.svg" alt="Blog Illustration" class="image-tags" />
+    <p class="text-muted">Add your unique voice to our blog today!</p>
   </div>
 </div>
+
 <%- include('./includes/footer') %>
