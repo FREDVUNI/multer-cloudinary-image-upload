@@ -59,7 +59,7 @@ router.post("/create", upload.single("coverImage"), async (req, res) => {
     await post.save();
     res.redirect("/");
   } catch (error) {
-    console.error("Error:", error.message);
+    console.error("Error:", error);
 
     res.render("post", {
       errorMsg: error.message || "There was an error creating the post.",
