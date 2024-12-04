@@ -20,6 +20,7 @@ To use this application, you will need to have Node.js and MongoDB installed on 
 2. Run `npm install` in the project directory to install the necessary dependencies.
 3. Set up a Cloudinary account and obtain your API key, API secret, and cloud name.
 4. Create a `.env` file in the root directory of the project and add the following information:
+
 ``
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
