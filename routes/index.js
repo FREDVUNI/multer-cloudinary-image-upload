@@ -47,7 +47,9 @@ router.post("/create", upload.single("coverImage"), async (req, res) => {
       throw new Error("File upload failed. No file provided.");
     }
 
-    const result = await cloudinary.uploader.upload(req.file.path);
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "blogcloudinary",
+    });
 
     const post = new blog({
       title: req.body.title,
