@@ -41,7 +41,6 @@ The application allows users to upload images to the server using Multer, which 
 
 ![image](https://github.com/user-attachments/assets/5dd7e770-22cf-4546-89fd-61d37f980155)
 
-
 ## Contribution
 
 If you want to contribute to this project, you can do so by following these steps:
