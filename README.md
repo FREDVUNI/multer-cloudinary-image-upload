@@ -32,6 +32,8 @@ CLOUDINARY_CLOUD_NAME=your_cloud_name
 
 The application allows users to upload images to the server using Multer, which stores the image files locally. Once the files are uploaded, they are automatically uploaded to Cloudinary servers and the links to the images are saved in a MongoDB database. Users can view a gallery of all the uploaded images, as well as individual pages for each image that display the image and its details.
 
+## Screenshots
+
 ## Contribution
 
 If you want to contribute to this project, you can do so by following these steps:
