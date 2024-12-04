@@ -1,19 +1,39 @@
 <%- include('./includes/head') %>
-<div class="row post-row">
-  <div class="col-6">
-    <h4 class="single"><%=post.title%></h4>
-    <p><%=post.description %></p>
-    <div>
-      <a href="#" class="btn">
-        <i class="fa fa-pencil"></i>
-      </a>
-      <a href="#" class="btn">
-        <i class="fa fa-trash"></i>
-      </a>
+<div class="mt-5">
+  <div class="d-flex">
+    <div class="me-3" style="flex: 0 0 250px">
+      <img
+        src="/uploads/<%= post.coverImage %>"
+        class="img-fluid rounded"
+        alt="<%= post.title %>"
+        style="object-fit: cover; height: 250px; width: 100%"
+      />
+    </div>
+    <div class="mb-5">
+      <h5 class="card-title t">
+        <a href="<%= post._id %>" class="text-muted text-decoration-none"
+          ><%= post.title %></a
+        >
+      </h5>
+      <p class="card-text text-muted p-tag"><%= post.description %></p>
+      <div class="d-flex justify-content-start">
+        <a
+          href="#"
+          class="btn btn-outline-primary me-2 text-decoration-none"
+          title="Edit"
+        >
+          <i class="fa fa-pencil"></i>
+        </a>
+        <a
+          href="#"
+          class="btn btn-outline-danger text-decoration-none"
+          title="Delete"
+        >
+          <i class="fa fa-trash"></i>
+        </a>
+      </div>
     </div>
   </div>
-  <div class="col-6">
-    <img src="/uploads/<%= post.coverImage %>" class="image-tags" />
-  </div>
 </div>
+
 <%- include('./includes/footer') %>
