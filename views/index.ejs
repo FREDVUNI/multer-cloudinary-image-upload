@@ -1,17 +1,45 @@
 <%- include('./includes/head') %>
-<h1 class="title">The kanzucode bootcamp cohort one blog</h1>
-<div class="row">
-  <% if(posts.length > 0){ %> <% posts.forEach(post=>{ %>
-  <div class="col-6">
-    <h4 class="t"><a href="<%=post._id%>"><%=post.title%></a></h4>
-    <p class="p-tag"><%=post.description %>.</p>
-    <i class="fab fa-twitter"></i>
-    <i class="fab fa-github"></i>
-    <i class="fab fa-facebook"></i>
-    <img src="/uploads/<%=post.coverImage  %>" class="image-tag" />
+<h4
+  class="title text-center mb-5 display-4 text-primary font-weight-bold text-uppercase text-shadow"
+>
+  The Bootcamp Cohort One Blog
+</h4>
+<% if(posts.length > 0){ %>
+<div class="row mb-5">
+  <% posts.forEach(post => { %>
+  <div class="col-md-6 mb-5 post">
+    <div class="d-flex">
+      <div class="me-3" style="flex: 0 0 250px">
+        <img
+          src="/uploads/<%= post.coverImage %>"
+          class="img-fluid rounded"
+          alt="<%= post.title %>"
+          style="object-fit: cover; height: 250px; width: 100%"
+        />
+      </div>
+      <div class="mb-5">
+        <h5 class="card-title t">
+          <a href="<%= post._id %>" class="text-muted text-decoration-none"
+            ><%= post.title %></a
+          >
+        </h5>
+        <p class="card-text text-muted p-tag"><%= post.description %></p>
+        <div class="social-icons">
+          <a href="#" title="Twitter" class="social-icon text-info me-2">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" title="Facebook" class="social-icon text-primary me-2">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" title="GitHub" class="social-icon text-dark">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-  <% }) %> <% }else{ %>
-  <h1 class="title-">There are no posts available.</h1>
-  <% } %>
+  <% }) %>
 </div>
-<%- include('./includes/footer') %>
+<% } else { %>
+<h1 class="title-">There are no posts available.</h1>
+<% } %> <%- include('./includes/footer') %>
