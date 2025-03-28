@@ -1,4 +1,4 @@
-# Multer-Cloudinary Image Upload
+# Multer Cloudinary Image Upload
 
 This is a NodeJS/Express web application that allows users to upload images using Multer and store them on Cloudinary servers. The application also uses MongoDB to store data related to the uploaded images.
 
